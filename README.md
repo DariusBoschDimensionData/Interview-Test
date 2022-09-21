@@ -4,7 +4,7 @@
 * Create a branch with the prefix 'test/' and your name
 * Start the API with Visual Studio, it should open on http://localhost:4201
 * Start the frontend with command line, it should open on http://localhost:4200
-* When you are done, please create a pull request for us to review
+* When you are done, ensure all your changes are saved to the fork on your profile and it is a public project.
 
 ## API (C#)
 * Refactor the Hero class to implement an interface of IHero.
