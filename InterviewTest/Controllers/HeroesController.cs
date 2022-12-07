@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json.Linq;
 
 namespace InterviewTest.Controllers
 {
@@ -46,11 +47,14 @@ namespace InterviewTest.Controllers
         {
         }
 
-        // POST: api/Heroes/
+        // POST: api/Heroes/hulk
         [HttpPost]
-        [Route("{name}/[action]")]
-        public async Task<ActionResult<Hero[]>> Evolve([FromBody] string name, string action = "none")
+        [Route("Evolve")]
+        public async Task<ActionResult<Hero[]>> Evolve([FromBody] JObject data)
         {
+            string name = data["name"].ToString();
+            string action = data["action"].ToString();
+
             if (action == "none")
             {
                 return BadRequest("Action is required");
@@ -60,13 +64,15 @@ namespace InterviewTest.Controllers
 
             if (hero != null)
             {
+
+                List<KeyValuePair<string, int>> kvp = new List<KeyValuePair<string, int>>();
                 foreach (var item in hero.stats)
                 {
-                    var newEntry = new KeyValuePair<string, int>(item.Key,(int)(Math.Floor(item.Value * 1.5)));
-
-                    hero.stats.Remove(item);
-                    hero.stats.Add(newEntry);
+                    var newEntry = new KeyValuePair<string, int>(item.Key, (int)(Math.Floor(item.Value * 1.5)));
+                    kvp.Add(newEntry);
                 }
+
+                hero.stats = kvp;
             }
 
             return Ok(heroes);
