@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+$testBlue: blue;
+
+
+table,
+th,
+td {
+    border: 1px solid;
+    padding: auto;
+}
+
+table{
+    width: 90%;
+}
+
+.textCenter{
+    text-align: center;
+}
+
+.heading{
+    color: $testBlue;
+}

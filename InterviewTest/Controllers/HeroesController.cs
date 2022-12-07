@@ -46,6 +46,32 @@ namespace InterviewTest.Controllers
         {
         }
 
+        // POST: api/Heroes/
+        [HttpPost]
+        [Route("{name}/[action]")]
+        public async Task<ActionResult<Hero[]>> Evolve([FromBody] string name, string action = "none")
+        {
+            if (action == "none")
+            {
+                return BadRequest("Action is required");
+            }
+
+            Hero hero = heroes.Where(x => x.name == name).SingleOrDefault();
+
+            if (hero != null)
+            {
+                foreach (var item in hero.stats)
+                {
+                    var newEntry = new KeyValuePair<string, int>(item.Key,(int)(Math.Floor(item.Value * 1.5)));
+
+                    hero.stats.Remove(item);
+                    hero.stats.Add(newEntry);
+                }
+            }
+
+            return Ok(heroes);
+        }
+
         // PUT: api/Heroes/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
