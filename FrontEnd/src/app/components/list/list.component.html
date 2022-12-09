@@ -1,15 +1,21 @@
 <div class="textCenter">
   <h2 class="heading">Tour of Heroes</h2>
-  <table>
+  <table [className]="getClass()">
     <tr>
       <th>Name</th>
       <th>Power</th>
+      <th>Stats</th>
       <th>Actions</th>
     </tr>
-    <tr *ngFor="let hero of heroes; index as i; trackBy: trackByFn">
+    <tr *ngFor="let hero of heroes; index as i">
       <td>{{ hero.name }}</td>
       <td>{{ hero.power }}</td>
-      <td><button>Evolve</button></td>
+      <td>
+      <table class="w100"><tr>
+        <td *ngFor="let stat of hero.stats; index as j">{{stat.key }} : {{stat.value }}</td>
+       </tr></table>
+      </td>
+      <td><button (click)="evolveHero(hero)">Evolve</button></td>
     </tr>
   </table>
 </div>

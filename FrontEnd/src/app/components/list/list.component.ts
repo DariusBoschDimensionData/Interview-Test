@@ -13,9 +13,24 @@ export class ListComponent implements OnInit {
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
+   this.getHeroes();
+  }
+
+
+  public evolveHero(Hero : any){
+    this.apiService.postEvolve(Hero).subscribe(response => {
+      window.alert("Stats For Hero:" + Hero.name + "Updated, table will display new values")
+      this.heroes = response;
+    });
+  }
+
+  getHeroes(){
     this.apiService.getHeroes().subscribe(response => {
       this.heroes = response;
     });
   }
 
+  getClass(){
+    return "classRandom-" + Math.floor(Math.random() * (4 - 1 + 1) + 1)
+  }
 }

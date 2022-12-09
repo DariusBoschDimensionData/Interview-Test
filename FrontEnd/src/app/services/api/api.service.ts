@@ -19,8 +19,13 @@ export class ApiService {
     );
   }
 
-  public postEvolve(): Observable<any[]> {
-    return this.httpClient.get<any[]>(environment.baseURL + "heroes").pipe(
+  public postEvolve(Hero): Observable<any> {
+
+    const toSendObject = {
+      name: Hero.name,
+      action: "Evolve"
+    }
+    return this.httpClient.post<any>(environment.baseURL + "heroes/Evolve", toSendObject).pipe(
       retry(1),
       catchError(this.handleError)
     );

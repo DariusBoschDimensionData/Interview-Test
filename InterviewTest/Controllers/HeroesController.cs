@@ -55,6 +55,8 @@ namespace InterviewTest.Controllers
             string name = data["name"].ToString();
             string action = data["action"].ToString();
 
+            Hero heroClass = new Hero();
+
             if (action == "none")
             {
                 return BadRequest("Action is required");
@@ -65,14 +67,7 @@ namespace InterviewTest.Controllers
             if (hero != null)
             {
 
-                List<KeyValuePair<string, int>> kvp = new List<KeyValuePair<string, int>>();
-                foreach (var item in hero.stats)
-                {
-                    var newEntry = new KeyValuePair<string, int>(item.Key, (int)(Math.Floor(item.Value * 1.5)));
-                    kvp.Add(newEntry);
-                }
-
-                hero.stats = kvp;
+                hero = hero.Evolve(hero);
             }
 
             return Ok(heroes);

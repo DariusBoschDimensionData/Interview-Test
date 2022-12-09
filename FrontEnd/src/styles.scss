@@ -10,7 +10,7 @@ td {
 }
 
 table{
-    width: 90%;
+    width: 100%;
 }
 
 .textCenter{
@@ -20,3 +20,26 @@ table{
 .heading{
     color: $testBlue;
 }
+
+.classRandom{
+    &-1 {
+        color: lightgreen;
+        background-color: darkblue;
+    }
+
+    &-2 {
+        color: yellow;
+        background-color: purple;
+    }
+
+    &-3 {
+        color: blue;
+        background-color: orange;
+    }
+
+    &-4 {
+        color: Black;
+        background-color: white;
+    }
+}
+
