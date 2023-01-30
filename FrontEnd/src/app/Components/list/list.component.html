@@ -1,0 +1,26 @@
+<!--3. create new component named 'list' -->
+
+<!--6. There should be a heading (h2) with the title 'Tour of Heroes'. -->
+<h2 class="heading">Tour of Heroes</h2>
+
+<!-- display the updated stats above the table with heading "Hero updated with Stats", replacing the name and the stats -->
+<h4 class="heading" *ngIf="StatsUpdated">Hero updated with Stats:</h4>
+
+<!-- 5.display the list on the frontend. -->
+<table id="Hereos">
+    <tr>
+      <th>Name</th>
+      <th>Power</th>
+      <th>Stat(Strength)</th>
+      <th>Stat(Intelligence)</th>
+      <th>Stat(stamina)</th>
+      <th></th>
+    </tr>
+    <!-- Color green was selected as the random color - I was not sure if it should randomise by iteself for each record that will be added - Instructions where unclear -->
+    <tr *ngFor="let Hereo of heroList" class="color-green">
+      <td>{{Hereo.name}}</td>
+      <td>{{Hereo.power}}</td>
+      <td *ngFor="let stat of Hereo.stats">{{stat.value}}</td>
+      <td style="text-align: center;"><input type="submit" value="Evolve" class="button" (click)="EvolveHero(Hereo)"></td>
+    </tr>
+  </table>

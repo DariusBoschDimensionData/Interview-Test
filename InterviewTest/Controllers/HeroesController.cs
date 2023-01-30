@@ -42,8 +42,27 @@ namespace InterviewTest.Controllers
 
         // POST: api/Heroes
         [HttpPost]
-        public void Post([FromBody] string value)
+        public Hero Post([FromBody] dynamic param)
         {
+            Hero findHero = new Hero();
+
+            string HeroName = param.Hero;
+
+            if (param.action == "evolve") //If action is evolve the method should be called
+            {
+                //getting the specific Hero based on name as the identifier 
+                findHero = heroes.Where(z=> z.name == HeroName).FirstOrDefault();
+
+                //Evolve Hero - multiple of half the original stats value
+                findHero.evolve();
+            }
+            else //if action is none by default
+            {
+                //if action none - return Hero
+                findHero = heroes.Where(z => z.name == HeroName).FirstOrDefault();
+            }
+
+            return findHero;
         }
 
         // PUT: api/Heroes/5
