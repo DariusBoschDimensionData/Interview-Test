@@ -25,10 +25,37 @@ namespace InterviewTest.Controllers
             throw new NotImplementedException();
         }
 
-        public void Evolve(int statIncrease = 5)
+        // Changing bool to string type, to handle 'none' defalt and for more possibilities I guess :/
+        public void Evolve(string action, List<KeyValuePair<string, int>> stats)
         {
-            Console.WriteLine("yippee evolve accessed! " + statIncrease);
-            
+            action= action;
+            if(stats!=null && stats.Count()>0)
+            {
+                // Case statement maybe? Or rather an interface?
+                if(action == "evolve")
+                {
+                    foreach (var statts in stats)
+                    {
+                        // Get list
+                        // Get values from list
+                        // Get action
+                        // Check action
+                        // If correct action, enter loop
+                        // Take current value, divide by 2
+                        // Assign new value to stat
+                        // Exit
+                        Console.WriteLine(statts.Key);
+                        statts.ForEach(x => Console.WriteLine(x));
+
+                    }
+
+                    stats.ForEach(x => Console.WriteLine(x));
+                }
+            }
+
+            Console.WriteLine(action);
+            Console.WriteLine("yippee evolve accessed! ");
+
         }
 
         public void Evolve(Hero hero)

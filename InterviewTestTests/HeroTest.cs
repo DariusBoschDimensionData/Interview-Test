@@ -1,14 +1,16 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
 
 namespace InterviewTestTests
 {
     [TestClass]
-    public class UnitTest1
+    public class HeroTest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void Delete(int ID)
         {
+            Assert.IsNotNull(ID);
+
+
         }
     }
 }
