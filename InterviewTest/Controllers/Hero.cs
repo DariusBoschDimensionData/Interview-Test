@@ -12,6 +12,7 @@ namespace InterviewTest.Controllers
     public class Hero : IHero
     {
         public string name { get; set; }
+        private int id { get; set; }
         public string power { get; set; }
         public List<KeyValuePair<string, int>> stats {get;set;}
 
