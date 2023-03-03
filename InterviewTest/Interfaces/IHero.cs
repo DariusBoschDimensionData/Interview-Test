@@ -17,5 +17,6 @@ namespace InterviewTest.Interfaces
         void Delete(int id);
 
         void Evolve(Hero hero);
+        void Evolve(string action, List<KeyValuePair<string, int>> stats, Hero );
     }
 }
