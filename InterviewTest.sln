@@ -1,21 +1,31 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.28729.10
+# Visual Studio 15
+VisualStudioVersion = 15.0.33403.129
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterviewTest", "InterviewTest\InterviewTest.csproj", "{FF885E8B-5F05-4C8F-B56A-06C795F5649C}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FrontEnd", "FrontEnd", "{BF55E9CD-9E66-40C6-95AD-E79B955D0022}"
+	ProjectSection(SolutionItems) = preProject
+		FrontEnd\.editorconfig = FrontEnd\.editorconfig
+		FrontEnd\.gitignore = FrontEnd\.gitignore
+		FrontEnd\angular.json = FrontEnd\angular.json
+		FrontEnd\css = FrontEnd\css
+		FrontEnd\package-lock.json = FrontEnd\package-lock.json
+		FrontEnd\package.json = FrontEnd\package.json
+		FrontEnd\README.md = FrontEnd\README.md
+		FrontEnd\tsconfig.json = FrontEnd\tsconfig.json
+		FrontEnd\tslint.json = FrontEnd\tslint.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "InterviewTest", "InterviewTest", "{32205E94-4E89-4842-B87B-ECA50B79E932}"
+	ProjectSection(SolutionItems) = preProject
+		InterviewTest\appsettings.Development.json = InterviewTest\appsettings.Development.json
+		InterviewTest\appsettings.json = InterviewTest\appsettings.json
+		InterviewTest\InterviewTest.csproj = InterviewTest\InterviewTest.csproj
+		InterviewTest\Program.cs = InterviewTest\Program.cs
+		InterviewTest\Startup.cs = InterviewTest\Startup.cs
+	EndProjectSection
 EndProject
 Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{FF885E8B-5F05-4C8F-B56A-06C795F5649C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FF885E8B-5F05-4C8F-B56A-06C795F5649C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FF885E8B-5F05-4C8F-B56A-06C795F5649C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FF885E8B-5F05-4C8F-B56A-06C795F5649C}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection

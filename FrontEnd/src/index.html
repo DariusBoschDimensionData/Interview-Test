@@ -7,8 +7,41 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <style>
+    h2 {
+      color: blue;
+      align-content: center;
+      font-size: 300%;
+    }
+  .heading{
+  
+  }
+
+  :root {
+  --hue: 220;
+  --sat: 100;
+  --light: 81;
+}
+
+.btn {
+  background: hsl(var(--hue), calc(var(--sat) * 1%), calc(var(--light) * 1%));
+}
+
+    </style>
+    <script>
+  function randomColor(){
+    rc = "#";
+    for(i=0;i<4;i++){
+        rc += Math.floor(Math.random()*16).toString(16);
+    }
+    return rc;
+}
+
+    </script>
+    
 </head>
 <body>
+  <h2>Tour of Heroes</h2>
   <app-root></app-root>
 </body>
 </html>
