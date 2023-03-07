@@ -12,6 +12,24 @@ namespace InterviewTestTests
             //Below is just fun, ignore
             Assert.AreEqual(0, ID);
 
-        } 
+        }
+        [TestMethod]
+
+        public void Get(int ID)
+        {
+            Assert.IsNotNull(ID);
+            Assert.AreEqual(0, ID);
+
+        }
+
+        [TestMethod]
+
+        public void evolve(int ID, string action)
+        {
+            Assert.IsNotNull(ID);
+            Assert.AreEqual(0, ID);
+            Assert.AreEqual(action, action);
+
+        }
     }
 }

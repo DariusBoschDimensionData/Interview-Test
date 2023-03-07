@@ -28,63 +28,48 @@ namespace InterviewTest.Controllers
             throw new NotImplementedException();
         }
 
-        // Changing bool to string type, to handle 'none' defalt and for more possibilities I guess :/
+
         public void Evolve(string action, List<KeyValuePair<string, int>> stats)
         {
-            action= action;
-            if(stats!=null && stats.Count()>0)
+            action = action;
+            if(stats != null && stats.Count()>0)
             {
-                //Hero.stats.g
-                // Case statement maybe? Or rather an interface?
+
                 if(action == "evolve")
                 {                    
                     foreach (var statts in stats)
                     {
-                        string strringgy = statts.Key;
-                        int valuees = statts.Value;
+                        string powerStat = statts.Key;
+                        int powerStatValue = statts.Value;
 
-                        Console.WriteLine(strringgy);
+                        int newPowerValue = powerStatValue/2;
+                        int finalPowerValue = powerStatValue * newPowerValue;
 
-                        int newvaluees = valuees/2;
-                        int dividednewvalue = newvaluees/2;
+                        Console.WriteLine(finalPowerValue); 
 
-                        Console.WriteLine(dividednewvalue); 
-                        // var statsdict = Dictionary(statts.Key, statts.Value);
-                        // F it dude, let's use a hashtable and or a hashmap :'-)
+                        for (int i = 0;i < stats.Count; i++)
+                        {                            
 
-                        // Get list
-                        // Get values from list
-                        // Get action
-                        // Check action
-                        // If correct action, enter loop
-                        // Take current value, divide by 2
-                        // Assign new value to stat
-                        // Exit
+                            int mustRemove = stats.RemoveAll(x => x.Key == powerStat);
 
-                        // sSo many edge cases though, like how many flipping entries are we going to get???
-                        // What data types am I getting in there???
-                        // Will I have to change them at some point?
-                        // Is performance a concern? If so what are the constraints?
-                        // Attimesambiguitycanbeannoying
-                        if (dividednewvalue != null)
-                        {
-                            statts.Value = dividednewvalue;
+                            if (mustRemove == 1)
+                            {
+                                stats.Add(new KeyValuePair<string, int>(powerStat, finalPowerValue));
+                            }
+
                         }
-                        Console.WriteLine(statts.Key);
 
                     }
 
-                    stats.ForEach(x => Console.WriteLine(x));
+
                 }
             }
-
-            Console.WriteLine(action);
-            Console.WriteLine("yippee evolve accessed! ");
 
         }
 
         public void Evolve(Hero hero)
         {
+            
             Console.WriteLine("Evolve but with a different signature, input param is Hero which is not good I guess lmao -> " + hero.name);
             throw new NotImplementedException();
         }
@@ -97,13 +82,12 @@ namespace InterviewTest.Controllers
 
         public Hero Get(int id)
         {
-            Console.WriteLine($"{name} {id}" + "Yeah get you know...");
-
             throw new NotImplementedException();
         }
 
-        public void Post([FromBody] string value)
-        {
+        public void Post([FromBody] string value, string action)
+        {            
+
             throw new NotImplementedException();
         }
 
@@ -112,9 +96,11 @@ namespace InterviewTest.Controllers
             throw new NotImplementedException();
         }
 
-        void IHero.Evolve(string action, List<KeyValuePair<string, int>> stats, Hero )
+        void IHero.Evolve(string action, List<KeyValuePair<string, int>> stats, Hero hero)
         {
+            
             throw new NotImplementedException();
         }
     }
+
 }
