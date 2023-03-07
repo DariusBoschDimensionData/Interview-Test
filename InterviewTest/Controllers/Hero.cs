@@ -87,7 +87,16 @@ namespace InterviewTest.Controllers
 
         public void Post([FromBody] string value, string action)
         {            
+            if (action == "evolve")
 
+            {   // TODO this list to be sent into evolve call
+                List<KeyValuePair<string, int>> HeroStats = new List<KeyValuePair<string, int>>();
+
+                // Call evolve with hero class with stats to be changed
+
+                
+                this.Evolve(action, list);
+            }
             throw new NotImplementedException();
         }
 
