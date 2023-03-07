@@ -42,8 +42,9 @@ namespace InterviewTest.Controllers
 
         // POST: api/Heroes
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] string value, string action)
         {
+            
         }
 
         // PUT: api/Heroes/5
