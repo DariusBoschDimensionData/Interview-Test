@@ -42,8 +42,13 @@ namespace InterviewTest.Controllers
 
         // POST: api/Heroes
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] string value = "none")
         {
+            Hero myHero= new Hero();
+            if (value == "evolve")
+            {
+                myHero.evolve();
+            }
         }
 
         // PUT: api/Heroes/5

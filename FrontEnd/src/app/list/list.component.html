@@ -1,0 +1,29 @@
+<h2 class="heading">Tour of Heroes</h2>
+<div *ngIf="displayHero">
+    <p> {{ hero }}</p>
+  </div>
+<table class="{{executeRandomColor()}}">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Power</th>
+        <th>Stats</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    
+    <tbody>
+      <tr *ngFor="let heroe of contact">
+        <td>{{ heroe.name }}</td>
+        <td>{{ heroe.power }}</td>
+        <td>
+          Strength: {{ heroe.stats.strength }},
+          Intelligence: {{ heroe.stats.intelligence }},
+          Stamina: {{ heroe.stats.stamina }}
+        </td>
+        <td>
+          <button (click)="displayClickedHero(contact)">Evolve</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
