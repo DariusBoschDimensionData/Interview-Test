@@ -1,5 +1,9 @@
-<h2>Tour of Heroes</h2>
+<h2 class="heading">Tour of Heroes</h2>
 <br>
+<div *ngIf="updatedStats">
+    <h3>Hero updated with Stats: {{ updatedStats }}</h3>
+  </div>
+<br>  
 <table>
     <thead>
         <tr>
@@ -8,13 +12,13 @@
             <td>Stats</td>
         </tr>
     </thead>
-    <tbody >
-        <tr>
+    <tbody>
+        <tr *ngFor="let hero of heroes" [ngClass]="getRandomColorsClass()">
             <td>{{hero.name}}</td>
             <td>{{hero.power}}</td>
             <td>{{hero.stats}}</td>
             <td>
-                <button type="submit">Evolve</button>
+                <button type="button" (click)="postHero(hero.name)">Evolve</button>
             </td>
         </tr>
     </tbody>
